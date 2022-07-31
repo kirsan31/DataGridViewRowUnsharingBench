@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Configurations>Debug;Release;NewRel</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<Optimize>false</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' != 'Debug'">
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(Configuration)' == 'NewRel'">
+		<Reference Include="d:\save\projects\winforms\artifacts\bin\System.Windows.Forms\Release\net6.0\System.Windows.Forms.dll" />
+		<Reference Include="d:\save\projects\winforms\artifacts\bin\System.Windows.Forms.Primitives\Release\net6.0\System.Windows.Forms.Primitives.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+	</ItemGroup>
+</Project>
